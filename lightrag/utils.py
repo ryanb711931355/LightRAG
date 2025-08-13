@@ -28,8 +28,8 @@ from lightrag.constants import (
 
 
 def get_env_value(
-    env_key: str, default: any, value_type: type = str, special_none: bool = False
-) -> any:
+    env_key: str, default: Any, value_type: type = str, special_none: bool = False
+) -> Any:
     """
     Get value from environment variable with type conversion
 
@@ -762,7 +762,7 @@ async def handle_cache(
     prompt,
     mode="default",
     cache_type=None,
-) -> str|None:
+) -> str | None:
     """Generic cache handling function with flattened cache keys"""
     if hashing_kv is None:
         return None
