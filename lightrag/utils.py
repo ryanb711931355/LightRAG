@@ -242,7 +242,7 @@ class UnlimitedSemaphore:
 class EmbeddingFunc:
     embedding_dim: int
     func: callable
-    max_token_size: int | None = None  # deprecated keep it for compatible only
+    max_token_size: int|None = None  # deprecated keep it for compatible only
 
     async def __call__(self, *args, **kwargs) -> np.ndarray:
         return await self.func(*args, **kwargs)
@@ -278,7 +278,7 @@ def generate_cache_key(mode: str, cache_type: str, hash_value: str) -> str:
     return f"{mode}:{cache_type}:{hash_value}"
 
 
-def parse_cache_key(cache_key: str) -> tuple[str, str, str] | None:
+def parse_cache_key(cache_key: str) -> tuple[str, str, str]|None:
     """Parse a flattened cache key back into its components
 
     Args:
@@ -1372,7 +1372,7 @@ def remove_think_tags(text: str) -> str:
 async def use_llm_func_with_cache(
     input_text: str,
     use_llm_func: callable,
-    llm_response_cache: "BaseKVStorage | None" = None,
+    llm_response_cache: "BaseKVStorage|None" = None,
     max_tokens: int = None,
     history_messages: list[dict[str, str]] = None,
     cache_type: str = "extract",
