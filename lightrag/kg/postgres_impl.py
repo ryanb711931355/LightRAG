@@ -1764,9 +1764,7 @@ class PGKVStorage(BaseKVStorage):
                     "original_prompt": v["original_prompt"],
                     "return_value": v["return"],
                     "chunk_id": v.get("chunk_id"),
-                    "cache_type": v.get(
-                        "cache_type", "extract"
-                    ),  # Get cache_type from data
+                    "cache_type": v.get("cache_type", "extract"),  # Get cache_type from data
                     "queryparam": json.dumps(v.get("queryparam"))
                     if v.get("queryparam")
                     else None,
