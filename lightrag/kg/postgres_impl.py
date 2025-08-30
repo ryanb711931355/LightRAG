@@ -788,9 +788,9 @@ class PostgreSQLDB:
                 WHERE table_name = $1 AND column_name = $2
                 """
                 params = {
-                        "table_name": migration["table"].lower(),
-                        "column_name": migration["column"],
-                    }
+                    "table_name": migration["table"].lower(),
+                    "column_name": migration["column"],
+                }
                 column_info = await self.query(
                     check_column_sql,
                     list(params.values()),
@@ -924,7 +924,7 @@ class PostgreSQLDB:
                     )
                 else:
                     logger.warning(
-                        "Doesn't support this vector index type: {self.vector_index_type}. "
+                        f"Doesn't support this vector index type: {self.vector_index_type}. "
                         "Supported types: HNSW, IVFFLAT"
                     )
             except Exception as e:
@@ -2927,7 +2927,6 @@ class PGGraphStorage(BaseGraphStorage):
                 value converted to a python type
         """
 
-        @staticmethod
         def parse_agtype_string(agtype_str: str) -> tuple[str, str]:
             """
             Parse agtype string precisely, separating JSON content and type identifier
