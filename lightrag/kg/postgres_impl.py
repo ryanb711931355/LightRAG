@@ -788,9 +788,9 @@ class PostgreSQLDB:
                 WHERE table_name = $1 AND column_name = $2
                 """
                 params = {
-                        "table_name": migration["table"].lower(),
-                        "column_name": migration["column"],
-                    }
+                    "table_name": migration["table"].lower(),
+                    "column_name": migration["column"],
+                }
                 column_info = await self.query(
                     check_column_sql,
                     list(params.values()),
